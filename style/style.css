@@ -5,6 +5,7 @@
 	--bg-component: #f1f5fe;
 	--bg-button: #293356;
 	--discount-color: #fe8e71;
+	--discount-bg: #fcddd6;
 	--border-color: #ccc;
 
 	--font: 'Manrope', sans-serif;
@@ -69,6 +70,7 @@ input[type='range'] {
 	width: 90%;
   height: 30px;
   overflow: hidden;
+	outline: none;
 	border-radius: 20px;
   cursor: pointer;
 }
@@ -128,12 +130,18 @@ input[type='range']::-webkit-slider-thumb::before {
 .card-pseudo--item {
 	height: 25px;
 	display: block;
+	margin: 0 .5em;
 	border-radius: 20px;
-	background-color: var(--bg-component);
+	background-color: var(--font-p);
 	width: 40px;
 	padding: 5px;
 	box-sizing: border-box;
-	border: 1px solid red;
+	border: 1px solid #ccc;
+}
+
+.card-discount-container p {
+	margin-right: .5em;
+	text-transform: capitalize;
 }
 
 .card-pseudo--item::before {
@@ -145,15 +153,19 @@ input[type='range']::-webkit-slider-thumb::before {
 	border-radius: 50%;
 	cursor: pointer;
 	user-select: none;
-	transform: translateX(-5px);
+	transform: translate(-5px, -5px);
 	transition: 0.5s;
 	will-change: transform;
-	border: 1px solid blue;
+	border: 1px solid var(--font-p);
 }
 
 .card-percentage {
-	background: var(--bg-component);
+	background: var(--discount-bg);
 	color: var(--discount-color);
+	border-radius: 10px;
+	font-weight: bold;
+	padding: .2em .5em;
+	font-size: .7em;
 }
 
 .card-icon {
