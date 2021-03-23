@@ -49,7 +49,8 @@ body {
 
 .card {
 	margin-top: 4em;
-	width: 100%;
+	width: 95%;
+	padding: 1em .5em;
 	/* border: 1px solid red; */
 	border-radius: 10px;
 	background: white;
@@ -60,10 +61,46 @@ body {
 /* 	letter-spacing: .1em; */
 }
 
-.card-range {
-	width: 90%;
+/* range */
+
+input[type='range'] {
 	display: block;
 	margin: 0 auto;
+	width: 90%;
+  height: 30px;
+  overflow: hidden;
+	border-radius: 20px;
+  cursor: pointer;
+}
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+/* esta es la banda de rango */
+input[type='range']::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 10px;
+	border-radius: 20px;
+  background: var(--range-color);
+}
+input[type='range']::-webkit-slider-thumb {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin-top: -10px;
+  background: var(--range-color-active);
+  border-radius: 50%;
+ 
+}
+input[type='range']::-webkit-slider-thumb::before {
+  position: absolute;
+  content: '';
+  height: 10px; /* equal to height of runnable track */
+  width: 500px; /* make this bigger than the widest range input element */
+  left: -502px; /* this should be -2px - width */
+  top: 8px; /* don't change this */
+  background: #777;
 }
 
 .card-price-container {
@@ -84,12 +121,63 @@ body {
 	border-bottom: 1px solid var(--border-color);
 }
 
+.card-checkbox {
+	display: none;
+}
+
+.card-pseudo--item {
+	height: 25px;
+	display: block;
+	border-radius: 20px;
+	background-color: var(--bg-component);
+	width: 40px;
+	padding: 5px;
+	box-sizing: border-box;
+	border: 1px solid red;
+}
+
+.card-pseudo--item::before {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	border-radius: 50%;
+	cursor: pointer;
+	user-select: none;
+	transform: translateX(-5px);
+	transition: 0.5s;
+	will-change: transform;
+	border: 1px solid blue;
+}
+
 .card-percentage {
 	background: var(--bg-component);
 	color: var(--discount-color);
 }
 
+.card-icon {
+	background: url('../images/icon-check.svg') no-repeat 25%;
+}
+
+.card-icon--2 {
+	background: url('../images/icon-check.svg') no-repeat 20%;
+}
+
+.card-icon--3 {
+	background: url('../images/icon-check.svg') no-repeat 30%;
+
+}
 .card-button {
 	display: block;
-	margin: 0 auto;
+
+	width: 50%;
+	text-align: center;
+	margin: 2em auto .8em;
+	height: 2em;
+	border-radius: 20px;
+	padding: .5em 1em;
+	color: var(--bg-component);
+	background: var(--bg-button);
 }
+
