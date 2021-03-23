@@ -17,6 +17,7 @@ body {
 }
 
 .pricing-component {
+	height: 100vh;
 	background-color: var(--bg-component);
 }
 
@@ -29,18 +30,34 @@ body {
 .u-h {
 	color: var(--font-h);
 	text-align: center;
+	font-size: 1.2em;
 }
 
 .u-p {
 	color: var(--font-p);
 	text-align: center;
+	font-size: .9em;
+}
+
+.pricing-title{
+	margin: .8em;
+}
+
+.pricing-description {
+	margin: .3em;
 }
 
 .card {
+	margin-top: 4em;
 	width: 100%;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	border-radius: 10px;
 	background: white;
+}
+
+.card-top p {
+	text-transform: uppercase;
+/* 	letter-spacing: .1em; */
 }
 
 .card-range {
@@ -55,6 +72,10 @@ body {
 	align-items: center;
 }
 
+.card-price {
+	font-size: 1.8em;
+}
+
 .card-discount-container {
 	display: flex;
 	justify-content: center;
@@ -63,7 +84,12 @@ body {
 	border-bottom: 1px solid var(--border-color);
 }
 
+.card-percentage {
+	background: var(--bg-component);
+	color: var(--discount-color);
+}
+
 .card-button {
 	display: block;
-	margin: 2em auto;
+	margin: 0 auto;
 }
