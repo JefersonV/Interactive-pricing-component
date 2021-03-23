@@ -1,0 +1,69 @@
+:root {
+	--range-color: #11d8c5;
+  --range-color-active: #23ada1;
+	--icon-check: #14d3bf;
+	--bg-component: #f1f5fe;
+	--bg-button: #293356;
+	--discount-color: #fe8e71;
+	--border-color: #ccc;
+
+	--font: 'Manrope', sans-serif;
+	--font-h: #2a3256;
+	--font-p: #8e93a7;
+}
+
+body {
+	font-family: var(--font);
+}
+
+.pricing-component {
+	background-color: var(--bg-component);
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 .5em;
+}
+
+.u-h {
+	color: var(--font-h);
+	text-align: center;
+}
+
+.u-p {
+	color: var(--font-p);
+	text-align: center;
+}
+
+.card {
+	width: 100%;
+	border: 1px solid red;
+	border-radius: 10px;
+	background: white;
+}
+
+.card-range {
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+}
+
+.card-price-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-discount-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 0 1em 0;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.card-button {
+	display: block;
+	margin: 2em auto;
+}
