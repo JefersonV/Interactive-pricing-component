@@ -1,20 +1,33 @@
 const range = document.querySelector('.card-range')
-const pageView = document.querySelector('.card-pageviews')
+const $pageView = document.querySelector('.card-pageviews')
+const $price = document.querySelector('.card-price')
 
-range.addEventListener('click', darValor)
+range.addEventListener('mouseup', darValor = () => {
 
-console.log(range.value)
-const pages = {
-	eightPrice: '10k Pageviews',
-	twelvePrice: '50k Pageviews',
-	sixteen: '100k Pageviews',
-	twentyFour: '500k Pageviews',
-	thirtySix: '1m Pageviews',
-}
-
-function darValor () {
-	if(range.value === 8) {
-		console.log(range.value)
-		pageView.innerHTML = pages.eightPrice
+	const prices = {
+		eightPrice: 8, //10k
+		twelvePrice: 12, //50k
+		sixteenPrice: 16, //100k
+		twentyFourPrice: 24, //500k
+		thirtySixPrice: 36, //1M
 	}
-}
+
+	if(range.valueAsNumber === prices.eightPrice) {
+		$pageView.innerHTML = '10K PAGEVIEWS'
+		$price.innerHTML = '$8'
+		
+	} else if(range.valueAsNumber === prices.twelvePrice) {
+		$pageView.innerHTML = '50K PAGEVIEWS'
+		$price.innerHTML = '$12'
+	} else if(range.valueAsNumber === prices.sixteenPrice) {
+		$pageView.innerHTML = '100K PAGEVIEWS'
+		$price.innerHTML = '$16'
+	} else if(range.valueAsNumber === prices.twentyFourPrice) {
+		$pageView.innerHTML = '500K PAGEVIEWS'
+		$price.innerHTML = '$24'
+	} else if(range.valueAsNumber === prices.thirtySixPrice) {
+		$pageView.innerHTML = '1M PAGEVIEWS'
+		$price.innerHTML = '$36'
+	}
+	
+})
