@@ -24,9 +24,17 @@
       
       <div class="card">
         <div class="card-top">
-          <p class="u-p">100k pageviews</p>
-          <input class="card-range" id="price-range" type="range" name="price-range" min="0" max="30">
-          
+          <p class="u-p card-pageviews">100k pageviews</p>
+          <input class="card-range" id="price-range" type="range" name="price-range" min="8" max="36" step="any" list="tickmarks">
+
+          <datalist id="tickmarks">
+            <option value="8">
+            <option value="12">
+            <option value="16">
+            <option value="24">
+            <option value="36">
+          </datalist>
+
           <div class="card-price-container">
             <h2 class="card-price u-h">$16.00</h2>
             <span class="card-month u-p">  /month</span>
@@ -42,10 +50,16 @@
 
         </div>
         <div class="card-bottom">
-          <p class="card-icon u-p">Unlimited websites</p>
-          <p class="card-icon--2 u-p">100% data ownership</p>
-          <p class="card-icon--3 u-p">Email reports</p>
-          <a class="card-button">Start my trial</a>
+          <div class="card-container-terms">
+            <p class="card-icon u-p">Unlimited websites</p>
+            <p class="card-icon--2 u-p">100% data ownership</p>
+            <p class="card-icon--3 u-p">Email reports</p>
+
+          </div>
+          <div class="card-container-button">
+            <a class="card-button">Start my trial</a>
+
+          </div>
         </div>
       </div>
     </div>
