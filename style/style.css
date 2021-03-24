@@ -17,10 +17,6 @@ body {
 	font-family: var(--font);
 }
 
-.pricing-component {
-	height: 100vh;
-	background-color: var(--bg-component);
-}
 
 .wrapper {
 	max-width: 1200px;
@@ -40,6 +36,16 @@ body {
 	font-size: .9em;
 }
 
+.pricing-component {
+	height: 100vh;
+	background-color: var(--bg-component);
+}
+
+.pricing-description-container {
+	background: url('../images/pattern-circles.svg')no-repeat center;
+	padding: 4em 0;
+}
+
 .pricing-title{
 	margin: .8em;
 }
@@ -49,21 +55,17 @@ body {
 }
 
 .card {
-	margin-top: 4em;
 	width: 95%;
 	padding: 1em .5em;
-	/* border: 1px solid red; */
 	border-radius: 10px;
 	background: white;
 }
 
 .card-top p {
 	text-transform: uppercase;
-/* 	letter-spacing: .1em; */
 }
 
 /* range */
-
 input[type='range'] {
 	display: block;
 	margin: 0 auto;
@@ -79,7 +81,7 @@ input[type='range']::-webkit-slider-runnable-track,
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
-/* esta es la banda de rango */
+
 input[type='range']::-webkit-slider-runnable-track {
   width: 200px;
   height: 10px;
@@ -91,17 +93,19 @@ input[type='range']::-webkit-slider-thumb {
   height: 30px;
   width: 30px;
   margin-top: -10px;
-  background: var(--range-color-active);
+	background-image: url('../images/icon-slider.svg') no-repeat center;
+	background-size: cover;
+  background-color: var(--range-color-active);
   border-radius: 50%;
- 
+	
 }
 input[type='range']::-webkit-slider-thumb::before {
   position: absolute;
   content: '';
-  height: 10px; /* equal to height of runnable track */
-  width: 500px; /* make this bigger than the widest range input element */
-  left: -502px; /* this should be -2px - width */
-  top: 8px; /* don't change this */
+  height: 10px; 
+  width: 500px; 
+  left: -502px;
+  top: 8px;
   background: #777;
 }
 
@@ -127,36 +131,43 @@ input[type='range']::-webkit-slider-thumb::before {
 	display: none;
 }
 
-.card-pseudo--item {
-	height: 25px;
-	display: block;
-	margin: 0 .5em;
-	border-radius: 20px;
-	background-color: var(--font-p);
-	width: 40px;
-	padding: 5px;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-}
-
 .card-discount-container p {
 	margin-right: .5em;
 	text-transform: capitalize;
 }
 
+.card-pseudo--item {
+	display: block;
+	height: 26px;
+	width: 45px;
+	margin: 0 .5em;
+	border-radius: 20px;
+	background-color: var(--font-p);
+	padding: 5px;
+	box-sizing: border-box;
+
+}
+
 .card-pseudo--item::before {
 	content: "";
 	display: block;
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	background-color: white;
 	border-radius: 50%;
 	cursor: pointer;
 	user-select: none;
-	transform: translate(-5px, -5px);
+	transform: translate(0, -2px);
 	transition: 0.5s;
 	will-change: transform;
-	border: 1px solid var(--font-p);
+}
+
+.card-checkbox:checked ~ .card-pseudo--item::before {
+	transform: translate(90%, -2px);
+}              
+
+.card-checkbox:checked ~ .card-pseudo--item {
+	background: var(--range-color);
 }
 
 .card-percentage {
@@ -178,11 +189,10 @@ input[type='range']::-webkit-slider-thumb::before {
 
 .card-icon--3 {
 	background: url('../images/icon-check.svg') no-repeat 30%;
-
 }
+
 .card-button {
 	display: block;
-
 	width: 50%;
 	text-align: center;
 	margin: 2em auto .8em;
