@@ -11,7 +11,7 @@ range.addEventListener('mouseup', darValor = () => {
 		twentyFourPrice: 24, //500k
 		thirtySixPrice: 36, //1M
 	}
-
+	//prueba para nueva pc
 	if(range.valueAsNumber === prices.eightPrice) {
 		$pageView.innerHTML = '10K PAGEVIEWS'
 		$price.innerHTML = '$8'
