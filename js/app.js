@@ -8,38 +8,36 @@ range.addEventListener('mouseup', giveValue = () => {
 
 	if(range.valueAsNumber === 8) {
 		$pageView.innerHTML = '10K PAGEVIEWS'
-		$price.innerHTML = '$8'		
+		$price.innerHTML = '$8.00'		
 	} else if(range.valueAsNumber === 12) {
 		$pageView.innerHTML = '50K PAGEVIEWS'
-		$price.innerHTML = '$12'
+		$price.innerHTML = '$12.00'
 	} else if(range.valueAsNumber === 16) {
 		$pageView.innerHTML = '100K PAGEVIEWS'
-		$price.innerHTML = '$16'
+		$price.innerHTML = '$16.00'
 	} else if(range.valueAsNumber === 24) {
 		$pageView.innerHTML = '500K PAGEVIEWS'
-		$price.innerHTML = '$24'
+		$price.innerHTML = '$24.00'
 	} else if(range.valueAsNumber === 36) {
 		$pageView.innerHTML = '1M PAGEVIEWS'
-		$price.innerHTML = '$36'
+		$price.innerHTML = '$36.00'
 	}	
 	
 })
 
-console.log(checkbox.checked = false)
+range.addEventListener('touchend', giveValue)
 
+/* checkbox */
 let checkboxIsChecked = () => checkbox.checked
-let checkboxIsUnchecked = () => checkbox.checked = false
 
 labelCheckbox.addEventListener('click', discount = () => {
-	let valorActual = range.valueAsNumber
+	let discount = range.valueAsNumber
 	if (checkboxIsChecked) {
-		valorActual *= .25
-		let valorFinal = range.valueAsNumber - valorActual
-		console.log(valorFinal)
-		$price.innerHTML = valorFinal
+		discount *= .25
+		let discountValue = range.valueAsNumber - discount
+		$price.innerHTML = `$${discountValue}.00`
+
 	} 
-	if (checkboxIsUnchecked === 1) {
-		$price.innerHTML = valorActual
-	}
-}) 
+	checkbox.checked = false
+})
 
