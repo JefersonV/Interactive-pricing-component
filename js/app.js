@@ -3,7 +3,7 @@ const $pageView = document.querySelector('.card-pageviews')
 const $price = document.querySelector('.card-price')
 const checkbox = document.querySelector('.card-checkbox')
 const labelCheckbox = document.querySelector('.card-pseudo--item')
-
+console.log(range.value)
 const prices = {
 	firstPrice: 8,
 	secondPrice: 12,
@@ -16,30 +16,38 @@ range.addEventListener('mouseup', giveValue = () => {
 
 	if(range.valueAsNumber === -2) {
 		$pageView.innerHTML = '10K PAGEVIEWS'
-		$price.innerHTML = '$8.00'		
+		$price.innerHTML = '$8.00'
+		//gradient input:range
+		range.classList.add('gradient1')
+		range.classList.remove('gradient-initial', 'gradient2', 'gradient3', 'gradient4', 'gradient5')		
 	} else if(range.valueAsNumber === -1) {
 		$pageView.innerHTML = '50K PAGEVIEWS'
 		$price.innerHTML = '$12.00'
+		range.classList.add('gradient2')
+		range.classList.remove('gradient-initial','gradient1', 'gradient3', 'gradient4', 'gradient5')
 	} else if(range.valueAsNumber === 0) {
 		$pageView.innerHTML = '100K PAGEVIEWS'
 		$price.innerHTML = '$16.00'
+		range.classList.add('gradient3')
+		range.classList.remove('gradient-initial','gradient1', 'gradient2', 'gradient4', 'gradient5')
 	} else if(range.valueAsNumber === 1) {
 		$pageView.innerHTML = '500K PAGEVIEWS'
 		$price.innerHTML = '$24.00'
+		range.classList.add('gradient4')
+		range.classList.remove('gradient-initial','gradient1', 'gradient2', 'gradient3', 'gradient5')
 	} else if(range.valueAsNumber === 2) {
 		$pageView.innerHTML = '1M PAGEVIEWS'
 		$price.innerHTML = '$36.00'
+		range.classList.add('gradient5')
+		range.classList.remove('gradient-initial','gradient1', 'gradient2', 'gradient3', 'gradient4')
 	}
 	checkbox.checked = true
 })
 // event smartphone
 range.addEventListener('touchend', giveValue)
 
-/* checkbox */
-let checkboxIsChecked = () => checkbox.checked
-
 labelCheckbox.addEventListener('click', discount = () => {
-	console.log(checkbox.checked)
+	// console.log(checkbox.checked)
 	const prices = {
 		firstPrice: 8, // -2
 		secondPrice: 12, // -1
@@ -88,7 +96,7 @@ labelCheckbox.addEventListener('click', discount = () => {
 	// console.log(discountValue)
 })
 
-labelCheckbox.addEventListener('click', checkout = () => {
+labelCheckbox.addEventListener('click', checkoutChangeValue = () => {
 	if(checkbox.checked === false && range.valueAsNumber === -2) {
 		$price.innerHTML = `$${prices.firstPrice}.00`
 	}
@@ -105,7 +113,4 @@ labelCheckbox.addEventListener('click', checkout = () => {
 	if(checkbox.checked === false && range.valueAsNumber === 2) {
 		$price.innerHTML = `$${prices.fifthPrice}.00`
 	}
-
-
-
 })
