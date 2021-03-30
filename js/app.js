@@ -30,7 +30,7 @@ range.addEventListener('mouseup', giveValue = () => {
 		$pageView.innerHTML = '1M PAGEVIEWS'
 		$price.innerHTML = '$36.00'
 	}
-	
+	checkbox.checked = true
 })
 // event smartphone
 range.addEventListener('touchend', giveValue)
@@ -39,6 +39,7 @@ range.addEventListener('touchend', giveValue)
 let checkboxIsChecked = () => checkbox.checked
 
 labelCheckbox.addEventListener('click', discount = () => {
+	console.log(checkbox.checked)
 	const prices = {
 		firstPrice: 8, // -2
 		secondPrice: 12, // -1
@@ -62,28 +63,49 @@ labelCheckbox.addEventListener('click', discount = () => {
 		let discountValue = prices.secondPrice - discount
 		$price.innerHTML = `$${discountValue}.00`
 		return
-	}
+	} 
 	if (checkbox.checked && range.valueAsNumber === 0) {
 		discount = prices.thirdPrice
 		discount *= .25
 		let discountValue = prices.thirdPrice - discount
 		$price.innerHTML = `$${discountValue}.00`
 		return
-	}
+	} 
 	if (checkbox.checked && range.valueAsNumber === 1) {
 		discount = prices.fourthPrice
 		discount *= .25
 		let discountValue = prices.fourthPrice - discount
 		$price.innerHTML = `$${discountValue}.00`
 		return
-	}
+	} 
 	if (checkbox.checked && range.valueAsNumber === 2) {
 		discount = prices.fifthPrice
 		discount *= .25
 		let discountValue = prices.fifthPrice - discount
 		$price.innerHTML = `$${discountValue}.00`
 		return
-	}
+	} 
 	// console.log(discountValue)
 })
 
+labelCheckbox.addEventListener('click', checkout = () => {
+	if(checkbox.checked === false && range.valueAsNumber === -2) {
+		$price.innerHTML = `$${prices.firstPrice}.00`
+	}
+	if(checkbox.checked === false && range.valueAsNumber === -1) {
+		$price.innerHTML = `$${prices.secondPrice}.00`
+	}
+
+	if(checkbox.checked === false && range.valueAsNumber === 0) {
+		$price.innerHTML = `$${prices.thirdPrice}.00`
+	}
+	if(checkbox.checked === false && range.valueAsNumber === 1) {
+		$price.innerHTML = `$${prices.fourthPrice}.00`
+	}
+	if(checkbox.checked === false && range.valueAsNumber === 2) {
+		$price.innerHTML = `$${prices.fifthPrice}.00`
+	}
+
+
+
+})
