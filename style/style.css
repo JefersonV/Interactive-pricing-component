@@ -66,8 +66,11 @@ body {
 	grid-template-rows: auto 50px auto auto auto;
 }
 
-.card-top p {
-	text-transform: uppercase;
+.card-pageviews {
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: .1em
+	
 }
 
 /* range */
@@ -138,6 +141,7 @@ input[type='range']::-webkit-slider-thumb {
   background-color: var(--range-color-active);
   border-radius: 50%;
 	
+
 }
 input[type='range']::-webkit-slider-thumb::before {
   position: absolute;
@@ -147,6 +151,7 @@ input[type='range']::-webkit-slider-thumb::before {
   left: -502px;
   top: 8px;
   background: #777;
+	margin: 1.5em 0;
 }
 
 .card-price-container {
@@ -163,8 +168,8 @@ input[type='range']::-webkit-slider-thumb::before {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0 0 1em 0;
-	border-bottom: 1px solid var(--border-color);
+	padding: 1em 0;
+	border-bottom: .5px solid var(--border-color);
 }
 
 .card-checkbox {
@@ -256,10 +261,20 @@ input[type='range']::-webkit-slider-thumb::before {
 	cursor: pointer;
 }
 
+.card-autor {
+	padding-top: 7em;
+	font-size: .7em;
+	text-align: center;
+	color: #9194a1;
+	margin: 0;
+	padding: 1em 0;
+}
+
 @media screen and (min-width: 768px) {
 	.card {
 		max-width: 50%;
 		margin: 0 auto;
+		padding: 1em 2em;
 	}
 	.card-top {
 		grid-template-areas: "top1"
@@ -273,15 +288,16 @@ input[type='range']::-webkit-slider-thumb::before {
 		grid-area: top1;
 		justify-self: flex-start;
     align-self: center;
-		padding-left: 5%;
+		
 		font-weight: bold;
+		
 	}
 
 	.card-price-container {
 		grid-area: top1;
-    justify-self: flex-end;
-    align-self: center;
-		padding-right: 5%;
+		justify-self: flex-end;
+		align-self: center;
+		
 	}
 
 	.card-price {
@@ -313,7 +329,6 @@ input[type='range']::-webkit-slider-thumb::before {
 	.card-bottom {
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
-		padding: 1em;
 	}
 
 	.card-container-terms p {

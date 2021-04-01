@@ -1,6 +1,7 @@
 const range = document.querySelector('.card-range')
 const $pageView = document.querySelector('.card-pageviews')
 const $price = document.querySelector('.card-price')
+const $month = document.querySelector('.card-month')
 const checkbox = document.querySelector('.card-checkbox')
 const labelCheckbox = document.querySelector('.card-pseudo--item')
 console.log(range.value)
@@ -42,11 +43,12 @@ range.addEventListener('mouseup', giveValue = () => {
 		range.classList.remove('gradient-initial','gradient1', 'gradient2', 'gradient3', 'gradient4')
 	}
 	checkbox.checked = true
+	$month.innerHTML = '/month'
 })
 // event smartphone
 range.addEventListener('touchend', giveValue)
 
-labelCheckbox.addEventListener('click', discount = () => {
+labelCheckbox.addEventListener('click', discountYear = () => {
 	// console.log(checkbox.checked)
 	const prices = {
 		firstPrice: 8, // -2
@@ -61,7 +63,8 @@ labelCheckbox.addEventListener('click', discount = () => {
 		discount = prices.firstPrice
 		discount *= .25
 		let discountValue = prices.firstPrice - discount
-		$price.innerHTML = `$${discountValue}.00`
+		$price.innerHTML = `$${discountValue * 12}.00`
+		$month.innerHTML = `/year`
 		return
 		// console.log(discount)
 	} 
@@ -69,28 +72,32 @@ labelCheckbox.addEventListener('click', discount = () => {
 		discount = prices.secondPrice
 		discount *= .25
 		let discountValue = prices.secondPrice - discount
-		$price.innerHTML = `$${discountValue}.00`
+		$price.innerHTML = `$${discountValue * 12}.00`
+		$month.innerHTML = `/year`
 		return
 	} 
 	if (checkbox.checked && range.valueAsNumber === 0) {
 		discount = prices.thirdPrice
 		discount *= .25
 		let discountValue = prices.thirdPrice - discount
-		$price.innerHTML = `$${discountValue}.00`
+		$price.innerHTML = `$${discountValue * 12}.00`
+		$month.innerHTML = `/year`
 		return
 	} 
 	if (checkbox.checked && range.valueAsNumber === 1) {
 		discount = prices.fourthPrice
 		discount *= .25
 		let discountValue = prices.fourthPrice - discount
-		$price.innerHTML = `$${discountValue}.00`
+		$price.innerHTML = `$${discountValue * 12}.00`
+		$month.innerHTML = `/year`
 		return
 	} 
 	if (checkbox.checked && range.valueAsNumber === 2) {
 		discount = prices.fifthPrice
 		discount *= .25
 		let discountValue = prices.fifthPrice - discount
-		$price.innerHTML = `$${discountValue}.00`
+		$price.innerHTML = `$${discountValue * 12}.00`
+		$month.innerHTML = `/year`
 		return
 	} 
 	// console.log(discountValue)
@@ -99,18 +106,23 @@ labelCheckbox.addEventListener('click', discount = () => {
 labelCheckbox.addEventListener('click', checkoutChangeValue = () => {
 	if(checkbox.checked === false && range.valueAsNumber === -2) {
 		$price.innerHTML = `$${prices.firstPrice}.00`
+		$month.innerHTML = `/month`
 	}
 	if(checkbox.checked === false && range.valueAsNumber === -1) {
 		$price.innerHTML = `$${prices.secondPrice}.00`
+		$month.innerHTML = `/month`
 	}
 
 	if(checkbox.checked === false && range.valueAsNumber === 0) {
 		$price.innerHTML = `$${prices.thirdPrice}.00`
+		$month.innerHTML = `/month`
 	}
 	if(checkbox.checked === false && range.valueAsNumber === 1) {
 		$price.innerHTML = `$${prices.fourthPrice}.00`
+		$month.innerHTML = `/month`
 	}
 	if(checkbox.checked === false && range.valueAsNumber === 2) {
 		$price.innerHTML = `$${prices.fifthPrice}.00`
+		$month.innerHTML = `/month`
 	}
 })
