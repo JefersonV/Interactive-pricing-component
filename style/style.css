@@ -37,8 +37,10 @@ body {
 }
 
 .pricing-component {
-	height: 100vh;
-	background-color: var(--bg-component);
+	position: relative;
+	background: url('../images/bg-pattern.svg') no-repeat top left;
+
+	
 }
 
 .pricing-description-container {
@@ -59,6 +61,7 @@ body {
 	padding: 1em .5em;
 	border-radius: 10px;
 	background: white;
+	box-shadow: 0px 17px 17px 7px hsl(224, 65%, 95%);
 }
 
 .card-top {
